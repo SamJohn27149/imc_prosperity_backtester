@@ -27,16 +27,16 @@ class ConversionObservation:
         transportFees: float,
         exportTariff: float,
         importTariff: float,
-        sugarPrice: float,
-        sunlightIndex: float,
+        sugarPrice: float, # NEED TO CHANGE
+        sunlightIndex: float, # NEED TO CHANGE
     ):
         self.bidPrice = bidPrice
         self.askPrice = askPrice
         self.transportFees = transportFees
         self.exportTariff = exportTariff
         self.importTariff = importTariff
-        self.sugarPrice = sugarPrice
-        self.sunlightIndex = sunlightIndex
+        self.sugarPrice = sugarPrice # NEED TO CHANGE
+        self.sunlightIndex = sunlightIndex # NEED TO CHANGE
 
 
 class Observation:
