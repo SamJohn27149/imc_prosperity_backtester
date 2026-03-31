@@ -4,22 +4,26 @@ from dataclasses import dataclass
 from prosperity3bt.datamodel import Symbol, Trade
 from prosperity3bt.file_reader import FileReader
 
+
+# NEED TO CHANGE
 LIMITS = {
-    "RAINFOREST_RESIN": 50,
-    "KELP": 50,
-    "SQUID_INK": 50,
-    "CROISSANTS": 250,
-    "JAMS": 350,
-    "DJEMBES": 60,
-    "PICNIC_BASKET1": 60,
-    "PICNIC_BASKET2": 100,
-    "VOLCANIC_ROCK": 400,
-    "VOLCANIC_ROCK_VOUCHER_9500": 200,
-    "VOLCANIC_ROCK_VOUCHER_9750": 200,
-    "VOLCANIC_ROCK_VOUCHER_10000": 200,
-    "VOLCANIC_ROCK_VOUCHER_10250": 200,
-    "VOLCANIC_ROCK_VOUCHER_10500": 200,
-    "MAGNIFICENT_MACARONS": 75,
+    "EMERALDS" : 80,
+    "TOMATOES" : 80,
+    # "RAINFOREST_RESIN": 50,
+    # "KELP": 50,
+    # "SQUID_INK": 50,
+    # "CROISSANTS": 250,
+    # "JAMS": 350,
+    # "DJEMBES": 60,
+    # "PICNIC_BASKET1": 60,
+    # "PICNIC_BASKET2": 100,
+    # "VOLCANIC_ROCK": 400,
+    # "VOLCANIC_ROCK_VOUCHER_9500": 200,
+    # "VOLCANIC_ROCK_VOUCHER_9750": 200,
+    # "VOLCANIC_ROCK_VOUCHER_10000": 200,
+    # "VOLCANIC_ROCK_VOUCHER_10250": 200,
+    # "VOLCANIC_ROCK_VOUCHER_10500": 200,
+    # "MAGNIFICENT_MACARONS": 75,
 }
 
 
@@ -57,8 +61,8 @@ class ObservationRow:
     transportFees: float
     exportTariff: float
     importTariff: float
-    sugarPrice: float
-    sunlightIndex: float
+    sugarPrice: float # NEED TO CHANGE
+    sunlightIndex: float # NEED TO CHANGE
 
 
 @dataclass
@@ -76,11 +80,11 @@ class BacktestData:
 def create_backtest_data(
     round_num: int, day_num: int, prices: list[PriceRow], trades: list[Trade], observations: list[ObservationRow]
 ) -> BacktestData:
-    prices_by_timestamp: dict[int, dict[Symbol, PriceRow]] = defaultdict(dict)
+    prices_by_timestamp: dict[int, dict[Symbol, PriceRow]] = defaultdict[int, dict[Symbol, PriceRow]](dict)
     for row in prices:
         prices_by_timestamp[row.timestamp][row.product] = row
 
-    trades_by_timestamp: dict[int, dict[Symbol, list[Trade]]] = defaultdict(lambda: defaultdict(list))
+    trades_by_timestamp: dict[int, dict[Symbol, list[Trade]]] = defaultdict[int, dict[Symbol, list[Trade]]](lambda: defaultdict[Symbol, list[Trade]](list))
     for trade in trades:
         trades_by_timestamp[trade.timestamp][trade.symbol].append(trade)
 
