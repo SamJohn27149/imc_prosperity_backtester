@@ -8,8 +8,8 @@ from prosperity3bt.file_reader import FileReader
 # NEED TO CHANGE
 # 硬编码：需要修改
 LIMITS = {             
-    "EMERALDS" : 80,
-    "TOMATOES" : 80,
+    "INTARIAN_PEPPER_ROOT" : 80,
+    "ASH_COATED_OSMIUM" : 80,
     "RAINFOREST_RESIN": 50,
     "KELP": 50,
     "SQUID_INK": 50,
