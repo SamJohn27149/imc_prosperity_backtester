@@ -58,7 +58,7 @@ def prepare_state(state: TradingState, data: BacktestData) -> None:
         )
 
         state.observations = Observation(
-            plainValueObservations={}, conversionObservations={"MAGNIFICENT_MACARONS": conversion_observation}
+            plainValueObservations={}, conversionObservations={"MAGNIFICENT_MACARONS": conversion_observation}  # 硬编码：需要修改
         )
 
 
